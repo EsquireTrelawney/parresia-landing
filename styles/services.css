@@ -1,0 +1,14 @@
+.issues-working-with__title {
+    font-size: 4.8rem;
+}
+
+.services__issues-working-with {
+    display: flex; /* Используем flexbox */
+    justify-content: flex-start; /* Выравниваем элементы по левому краю */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    padding-inline: var(--container-padding-x);
+}
+
+.services__issues-working-with h2 {
+    margin: 0 auto; /* Центрируем заголовок по горизонтали */
+}
