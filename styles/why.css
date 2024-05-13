@@ -1,0 +1,50 @@
+.why__text {
+    color: #000;
+    font-weight: 400;
+    font-size: clamp(20px, 5vw, 28px);
+}
+/* задаем первому элементу внешний отступ в 30px */
+.why__text:nth-of-type(1){
+    margin-bottom: 30px;
+}
+
+.why__images {
+    display: flex;
+    width: 50%;
+    column-gap: 20px;
+}
+@media only screen and (max-width: 1024px) {
+    .why__images {
+        width: 100%;
+        min-height: 500px;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .why__images {
+        min-height: 300px;
+    }
+}
+@media only screen and (max-width: 460px) {
+    .why__images {
+        min-height: 200px;
+    }
+}
+
+.why__image {
+        background-position: center center; /* x y */
+        /* масштабируем картинку, чтобы она полностью сохраняла свои пропорции,
+         некоторые части изображения будут не видны, потому пропорции картинки не будут совпадать с пропорциями блока
+         если бы мы использовали contain, то все изображение было бы видно, но в блоке появилось бы пустое пространство
+         такой вариант тоже неплохой, можно сделать и так, смотря что от нас требуется, ну думаю тут не важно, эти картинки всего лишь
+         декоративные элементы*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* картинка растягивается на всю доступную ширину родительского блока, а доступно у нас 50% от work__row*/
+        width: 100%;
+        /* скругляем края*/
+        border-radius: var(--img-border-radius);
+}
+
+.why__image--1 {
+    background-image: url('../img/why/psychoanalyst.png');
+}

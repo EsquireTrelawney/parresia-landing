@@ -1,77 +1,130 @@
 .hero {
-    min-height: 88vh;
-    background: url("../img/translucent-hero-bg.png") center/cover no-repeat;
-}
+    background-image: url('./../img/translucent-bg.png');
+    background-position: center center; /* x y */
+    background-size: cover;
+    background-repeat: no-repeat;
 
-.hero-container {
-    padding: calc(100vh / 18) var(--container-padding-x) calc(100vh / 15) var(--container-padding-x);
+    padding: 50px var(--container-padding-x) 70px var(--container-padding-x);
 }
-
-.hero__content {
+.hero__wrapper {
     display: flex;
     justify-content: space-between;
-    column-gap: calc(100vw / 24);
+    column-gap: 80px;
+    row-gap: 30px;
 }
-.hero__promo {
-    min-width: 63%;
+@media only screen and (max-width: 1280px) {
+    .hero__wrapper{
+        flex-direction: column;
+    }
+}
+.hero__info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    row-gap: calc(100vh / 32);
     align-items: center;
-    text-align: center;
+    row-gap: 30px;
+}
+@media only screen and (max-width: 1280px) {
+    .hero__info{
+        order: 2;
+    }
 }
 .hero__title {
-    font-size: 5rem;
-}
-.hero__cta {
-    font-size: 3.2rem;
-}
-
-.hero__advantages-list {
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    margin-bottom:  0;
-}
-
-.hero__advantages-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-weight: 800;
+    font-size: clamp(24px, 5vw, 50px);
     text-align: center;
-    flex-basis: 22%;
-}
-
-.hero__advantages-item__caption {
-    display: block;
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 2rem;
-}
-
-.hero__profile {
-    display: flex;
-    flex-direction: column;
-    row-gap: 5px;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-
-.hero__profile .hero__description {
-    margin-bottom: 5px;
-    text-indent: 0;
+    color: #000;
+    max-width: 830px;
 }
 .hero__description {
-    font-size: 3.2rem;
+    font-weight: 400;
+    font-size: clamp(18px, 3vw, 32px);
+    text-align: center;
+    color: #000;
+    max-width: 1050px;
 }
-
-.hero__name {
-    font-size: 4.8rem;
+.hero__subtitle {
+    font-weight: 600;
+    font-size: clamp(18px, 3vw, 32px);
+    text-align: center;
+    color: #000;
 }
+.hero__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
-.button-wrapper {
+}
+@media only screen and (max-width: 1024px) {
+    .hero__row{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 768px) {
+    .hero__row{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.hero__advantages {
     display: flex;
+    min-height: 230px;
+    row-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.hero__icon {
+    height: 122px;
+    width: 122px;
+    background-position: center center; /* x y */
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.hero__icon--up{
+    background-image: url("./../img/icons/like.svg");
+}
+.hero__icon--years{
+    background-image: url("./../img/icons/award.svg");
+}
+.hero__icon--safe{
+    background-image: url("./../img/icons/privacy.svg");
+}
+.hero__icon--table{
+    background-image: url("./../img/icons/note.svg");
+}
+.hero__advantages-subtitle {
+    font-weight: 600;
+    font-size: clamp(14px, 4vw, 24px);
+    text-align: center;
+    color: #000;
+}
+.hero__author {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.hero__name {
+    font-weight: 600;
+    font-size: clamp(24px, 5vw, 48px);
+    text-align: center;
+    color: #000;
+    white-space: nowrap;
+}
+.hero__specialization {
+    font-weight: 400;
+    font-size: clamp(18px, 3vw, 32px);
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+}
+.hero__photo {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    max-height: 749px;
+    border-radius: var(--hero-img-border-radius);
+}
+@media only screen and (max-width: 1280px) {
+    .hero__photo{
+        max-width: 80%;
+    }
 }
 

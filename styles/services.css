@@ -1,14 +1,189 @@
-.issues-working-with__title {
-    font-size: 4.8rem;
+.work {
+/* делаем внутренний отступ в нашем блоке сверху и снизу в 50px8 */
+    padding: 50px var(--container-padding-x);
+/* .work__container
+задаем общей обертке для всех work__row флекс,чтобы сделать
+флекс сетку, затем даем направление флекс элементам направление
+колонка */
+}
+.work__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
 }
 
-.services__issues-working-with {
-    display: flex; /* Используем flexbox */
-    justify-content: flex-start; /* Выравниваем элементы по левому краю */
-    align-items: center; /* Выравниваем элементы по центру по вертикали */
-    padding-inline: var(--container-padding-x);
+/* общая обертка для картинок и контента*/
+.work__row {
+    display: flex;
+    row-gap: 20px;
+    min-height: 400px;
+    justify-content: space-between;
+    column-gap: 20px;
+    position: relative;
+}
+/* на ширине 1024px перестраиваем элементы в нашей обертке в колонку */
+@media only screen and (max-width: 1024px) {
+    .work__row {
+        flex-direction: column;
+    }
+}
+/* при помощи псевдоэлемента добавляем линию между нашими обертками
+ для того чтобы визуально было легче разделить блоки с контентом */
+.work__row::before{
+    content: '';
+    height: 3px;
+    background-color: #979797;
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
 }
 
-.services__issues-working-with h2 {
-    margin: 0 auto; /* Центрируем заголовок по горизонтали */
+/* .work__images
+ для обертки с изображениями задаем ширину в 50%, по макету где-то так оно и есть*/
+.work__images {
+    display: flex;
+    width: 50%;
+    column-gap: 20px;
+}
+/* на ширине 1024px делаем для обертки с картинками ширину 100%, потому что
+ элементы в work__row, теперь в колонку и логично сделать обертку для картинок на всю доступную ширину
+ уменьшаем минимальную высоту этого блока, для того чтобы уменьшить размер картинок внутри, чтобы лучше соблюсти пропорции(да, это получилось не идеально :D)*/
+@media only screen and (max-width: 1024px) {
+    .work__images {
+        width: 100%;
+        min-height: 500px;
+    }
+}
+    @media only screen and (max-width: 540px) {
+        .work__images {
+            min-height: 300px;
+        }
+    }
+    @media only screen and (max-width: 460px) {
+        .work__images {
+            min-height: 200px;
+        }
+    }
+/* .work__image(*/
+.work__image{
+    background-position: center center; /* x y */
+/* масштабируем картинку, чтобы она полностью сохраняла свои пропорции,
+ некоторые части изображения будут не видны, потому пропорции картинки не будут совпадать с пропорциями блока
+ если бы мы использовали contain, то все изображение было бы видно, но в блоке появилось бы пустое пространство
+ такой вариант тоже неплохой, можно сделать и так, смотря что от нас требуется, ну думаю тут не важно, эти картинки всего лишь
+ декоративные элементы*/
+    background-size: cover;
+    background-repeat: no-repeat;
+/* картинка растягивается на всю доступную ширину родительского блока, а доступно у нас 50% от work__row*/
+width: 100%;
+/* скругляем края*/
+border-radius: var(--img-border-radius);
+}
+/* для указания разных путей к разным картинкам используем модификаторы, не знаю стоило ли делать именно так*/
+.work__image--1 {
+    background-image: url('../img/work/photo-1.jpg');
+}
+    .work__image--2{
+        background-image: url('../img/work/photo-2.jpg');
+    }
+    .work__image--3{
+        background-image: url('./../img/work/photo-3.jpg');
+    }
+    .work__image--4{
+        background-image: url('../img/work/photo-4.jpg');
+    }
+    .work__image--5{
+        background-image: url('../img/work/photo-5.jpg');
+    }
+/* .work__content
+ задаем максимальную ширину для элемента в котором расположен контент */
+.work__content {
+    max-width: 50%;
+}
+/* на ширине 1024 растягиваем его на всю доступную ширину*/
+@media only screen and (max-width: 1024px) {
+    .work__content {
+        max-width: 100%;
+    }
+}
+/* .work__title */
+
+.work__title {
+/* каждому заголовку задаем внешний отступ снизу в 30px*/
+    margin-bottom: 30px;
+    color: #000;
+    font-weight: 600;
+/* используем функцию clamp для расчета размера шрифта без медиазапросов
+ clamp(min, current, max) минимальное значение, текущее(его нужно задавать в адаптивных единицах), максимальное значение*/
+    font-size: clamp(16px, 8vw, 36px);
+    text-align: center;
+}
+.work__title--main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(16px, 8vw, 48px);
+    text-wrap: balance;
+    position: relative;
+    margin-bottom: 0;
+}
+/* добавляем декорацию через псевдоэлемент ::before */
+.work__title--main::before{
+    content: '';
+    background-image: url('../img/work/bookmark.svg');
+    background-position: center center; /* x y */
+    background-size: cover;
+    background-repeat: no-repeat;
+/* позиционируем этот элемент относительно родительского блока
+     это у нас work__title--main */
+    position: absolute;
+    left: 0;
+    width: 120px;
+    height: 35px;
+}
+@media only screen and (max-width: 1280px) {
+    .work__title--main::before{
+        content: '';
+        width: 100px;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .work__title--main::before{
+        display: none;
+    }
+}
+/* модификатор, для того чтобы заголовок можно было отодвинуть в левый край */
+.work__title--left{
+    text-align: left;
+}
+
+
+.work__text {
+    color: #000;
+    font-weight: 400;
+    font-size: clamp(14px, 5vw, 24px);
+}
+/* задаем первому элементу внешний отступ в 30px */
+.work__text:nth-of-type(1){
+    margin-bottom: 30px;
+}
+.work__list-item{
+/* флекс для того чтобы выровнять элементы списка и точки */
+display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #000;
+    font-weight: 400;
+    font-size: clamp(14px, 5vw, 24px);
+}
+/* создаем псевдоэлемент, для того чтобы у элементов списка были черные точки слева */
+.work__list-item::before{
+    content: ""; /* Добавляем псевдоэлемент */
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 10px;
+    border-radius: 50%; /* Делаем его круглым */
+    background-color: black; /* Задаем цвет */
 }

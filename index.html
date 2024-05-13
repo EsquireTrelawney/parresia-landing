@@ -6,147 +6,337 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Парресия</title>
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
 
+<!-- header -->
 <header class="header">
-    <div class="header-logo">
-      <a href="" class="header-logo__image-link"><img
-              class="header-logo__image"
-              src="./img/logo.svg"
-              alt="Логотип Parresia"
-              width="122" height="117" loading="lazy">
-      </a>
-      <a href="#" class="header-logo__wordmark">
-        ПАРРЕСИЯ
-      </a>
-    </div>
-   
-      <nav class="header__menu">
-        <ul class="header__menu-list">
-          <li class="header__menu-item">
-            <a href="" class="header__menu-link">Услуги</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="" class="header__menu-link">Обо мне</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="" class="header__menu-link">Отзывы</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="" class="header__menu-link">Контакты</a>
-          </li>
+  <div class="header__container container">
+    <a href="#!" class="header__logo">
+      <div class="header__logo-img"></div>
+      ПАРРЕСИЯ
+    </a>
+    <div class="header__row" data-header__row>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#!" class="nav__link">Услуги</a></li>
+          <li class="nav__item"><a href="#!" class="nav__link">Обо мне</a></li>
+          <li class="nav__item"><a href="#!" class="nav__link">Отзывы</a></li>
+          <li class="nav__item"><a href="#!" class="nav__link">Контакты</a></li>
         </ul>
       </nav>
-    <a href="" class="header__number-link">8 (918) 110-93-91</a>
-    <div class="header-social-links">
-      <a href="" class="header-social-links__link">
-        <img
-                class="header-social-links__image"
-                src="./img/tg-social.svg"
-                alt="Логотип Telegram"
-                width="50" height="50" loading="lazy">
-      </a>
-      <a href="" class="header-social-links__link">
-        <img
-                class="header-social-links__image"
-                src="./img/whatsapp-social.svg"
-                alt="Логотип WhatsApp"
-                width="50" height="50" loading="lazy">
-      </a>
+      <a href="tel:+89181109391" class="header__phone-link">8 (918) 110-93-91 </a>
+      <div class="social">
+        <a href="#!" class="social__link social__link--telegram"></a>
+        <a href="#!" class="social__link social__link--whatsup"></a>
+      </div>
     </div>
+    <button class="burger" data-burger aria-label="открыть меню" aria-expanded="false">
+      <span class="burger__line"></span>
+    </button>
+  </div>
 </header>
 
+<!-- hero section -->
 <section class="hero">
-  <div class="hero-container">
-    <div class="hero__content">
-      <article class="hero__promo">
+  <div class="hero__container container">
+    <div class="hero__wrapper">
+      <!-- info block -->
+      <div class="hero__info">
         <h1 class="hero__title">Индивидуальная и групповая консультация психолога</h1>
-        <p class="hero__description">Готовы заглянуть внутрь своего мира и найти те тропинки,
-            которые помогут разобраться со всем, что Вас беспокоит?</p>
-        <h3 class="hero__cta">Тогда пройдём этот путь вместе!</h3>
-        <div class="hero__advantages">
-            <ul class="hero__advantages-list">
-              <li class="hero__advantages-item">
-                <img src="./img/icons/like.svg" alt="Довольные клиенты" class="item__img">
-                <span class="hero__advantages-item__caption">Сотни довольных клиентов</span>
-              </li>
-              <li class="hero__advantages-item">
-                <img src="./img/icons/award.svg" alt="3+ года" class="item__img">
-                <span class="hero__advantages-item__caption">Более 3 лет</span>
-              </li>
-              <li class="hero__advantages-item">
-                <img src="./img/icons/privacy.svg" alt="Иконка конфиденциальность" class="item__img">
-                <span class="hero__advantages-item__caption">Конфиденциально</span>
-              </li>
-              <li class="hero__advantages-item">
-                <img src="./img/icons/note.svg" alt="Иконка заметок" class="item__img">
-                <span class="hero__advantages-item__caption">Психоанализ и КПТ</span>
-              </li>
-            </ul>
+        <p class="hero__description">Готовы заглянуть внутрь своего мира и найти те пути, которые помогут разобраться со всем, что Вас беспокоит?</p>
+        <h2 class="hero__subtitle">Тогда пройдём этот путь вместе!</h2>
+        <div class="hero__row">
+          <div class="hero__advantages">
+            <div class="hero__icon hero__icon--up"></div>
+            <div class="hero__advantages-subtitle">Сотни довольных
+              клиентов</div>
           </div>
-        <div class="button-wrapper">
-          <button type="button" class="get-consult-button">получить консультацию</button>
+          <div class="hero__advantages">
+            <div class="hero__icon hero__icon--years"></div>
+            <div class="hero__advantages-subtitle">Более 3 лет</div>
+          </div>
+          <div class="hero__advantages">
+            <div class="hero__icon hero__icon--safe"></div>
+            <div class="hero__advantages-subtitle">Конфиденциально</div>
+          </div>
+          <div class="hero__advantages">
+            <div class="hero__icon hero__icon--table"></div>
+            <div class="hero__advantages-subtitle">Психоанализ
+              и КПТ</div>
+          </div>
         </div>
-      </article>
-      <section class="hero__profile">
-        <h2 class="hero__name">Меремова Зарина</h2>
-        <p class="hero__description">Психолог-психоаналитик</p>
-        <img src="./img/hero-img.png"
-             alt="Психолог-психоаналитик Меремова Зарина"
-             class="hero__image"
-             width="547" height="597" loading="lazy">
-      </section>
+        <button class="hero__button button" data-feedback-button>получить консультацию</button>
+      </div>
+      <!-- author block -->
+      <div class="hero__author">
+        <div class="hero__name">Меремова Зарина</div>
+        <div class="hero__specialization">Психолог-психоаналитик</div>
+        <img src="./img/hero/hero-img.png" alt="Меремова Зарина - Психолог-психоаналитик" class="hero__photo">
+      </div>
     </div>
   </div>
 </section>
 
-<section class="services">
-  <div class="services-container">
-    <div class="services__issues-working-with">
-      <img src="./img/icons/label.svg" alt="Ярлык Закладки" width="122" height="35">
-      <h2 class ="issues-working-with__title">С какими вопросами я работаю?</h2>
+<section class="work">
+  <div class="work__container container">
+    <h2 class="work__title work__title--main">С какими вопросами я работаю?</h2>
+    <!-- обертка для изображений и контента -->
+    <div class="work__row">
+      <!-- обертка для изображений -->
+      <div class="work__images">
+        <div class="work__image work__image--1"></div>
+      </div>
+      <!-- обертка для контента(текст) -->
+      <div class="work__content">
+        <!-- заголовок -->
+        <h2 class="work__title">Вопросы семьи и брака:</h2>
+        <!-- параграфы текста -->
+        <p class="work__text">
+          Помощь в решение проблем в семейных и межличностных отношениях - развод и вступление во второй брак.
+        </p>
+        <p class="work__text">
+          Помощь в решении проблем в межличностных отношениях с близкими, родными, коллегами, друзьями и проблемы в
+          личных отношениях с партнёром - несчастная любовь, частая смена партнёров.
+        </p>
+      </div>
+    </div>
+    <div class="work__row">
+      <div class="work__content">
+        <h2 class="work__title work__title--left">Работа с травмирующими событиями:</h2>
+        <p class="work__text">
+          Помощь в преодолении негативных ситуаций.
+        </p>
+        <h2 class="work__title work__title--left">
+          Работа с тревожно-фобическими расстройствами и страхами:
+        </h2>
+        <ol class="work__list">
+          <li class="work__list-item">
+            Агрофобия,
+          </li>
+          <li class="work__list-item">
+            Социальные фобии.
+          </li>
+        </ol>
+        <h2 class="work__title work__title--left">
+          Работа с паническими атаками, невротическими расстройствами:
+        </h2>
+        <p class="work__text">
+          Помощь в решении проблем, связанных со стрессом, депрессией, затяжной депрессией.
+        </p>
+      </div>
+      <div class="work__images work__images--column">
+        <div class="work__image work__image--2"></div>
+        <div class="work__image work__image--3"></div>
+      </div>
+    </div>
+    <div class="work__row">
+      <div class="work__images">
+        <div class="work__image work__image--4"></div>
+      </div>
+      <div class="work__content">
+        <h2 class="work__title">Работа с тревожными расстройствами:</h2>
+        <ol class="work__list">
+          <li class="work__list-item">Навязчивые мысли</li>
+          <li class="work__list-item">Острая реакция на стресс</li>
+          <li class="work__list-item">Сепариционно-тревожные расстройства</li>
+        </ol>
+      </div>
+    </div>
+    <div class="work__row">
+      <div class="work__content">
+        <h2 class="work__title">Поиск внутренней опоры и преодоление внутренних переживаний:</h2>
+        <p class="work__text">Развитие своего потенциала, управление эмоциями и понимание эмоций других людей,
+          избавление от сомнений и тяжёлых воспоминаний, поиск жизненного пути.</p>
+        <p class="work__text">
+          Оказание помощи и поддержки при потере смысла жизни, утрате собственного Я, наличии суицидальных мыслей,
+          состоянии одиночества.
+        </p>
+      </div>
+      <div class="work__images">
+        <div class="work__image work__image--5"></div>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="therapy-method-full-bg">
+  <section class="therapy-method">
+    <div class="therapy-method__container container">
+      <h2 class="therapy-method__title therapy-method__title--main">Какой метод терапии я использую, и что это такое?</h2>
+      <div class="therapy-method__row">
+        <div class="therapy-method__content">
+          <p class="therapy-method__text">
+            <strong>Психоанализ</strong> - это метод, который подразумевает беседу о Ваших чувствах, эмоциях, переживаниях,
+            различных событиях в жизни, которые нашли в Вас тот или иной отклик, и обо всем, что Вас беспокоит.
+            А по мере развития этой беседы психолог сосредотачивается на Вас как на личности со своей уникальной
+            историей и опытом и дает деликатные психологические интерпретации.
+          </p>
+          <p class="therapy-method__text">
+            Это так называемый «лечебный разговор», во время которого нет запретных тем и каких-либо ограничений,
+            есть только Вы с желанием решить ваши трудности и чуткий психолог со всеми необходимыми знаниями для
+            того, чтобы помочь Вам эти трудности преодолеть.
+          </p>
+        </div>
+        <div class="therapy-method__images">
+          <div class="therapy-method__image therapy-method__image--1"></div>
+        </div>
+        <div class="therapy-method__qualification">
+          <div class="therapy-method__content">
+            <h2 class="therapy-method__title">Квалификация</h2>
+            <p class="therapy-method__text">
+              Высшее профессиональное образование по направлению «Психология», профиль «Психоанализ»
+              в АНО ВО «Восточно-европейский институт психоанализа» города Санкт-Петербурга.
+            </p>
+            <p class="therapy-method__text">
+              Высшее профессиональное образование по специальности «Юриспруденция», полученное в Государственном
+              образовательном учреждении высшего профессионального образования «Адыгейский государственный университет»
+              города Майкопа.
+            </p>
+          </div>
+          <button class="qualification__button button" data-qualification-button>Курсы повышения квалификации</button>
+          <!-- Модальное окно -->
+          <div class="qualification-modal" data-qualification-modal>
+            <div class="qualification-modal-content">
+              <!-- Кнопка закрытия модального окна -->
+              <button class="close__qualification-modal" data-close-qualification-modal></button>
+              <h2 class="qualification-modal__title">Информация о сертификатах</h2>
+              <!-- Слайдер -->
+              <div class="qualification-modal-slider"><div class="swiper mySwiper">
+                <div class="swiper-wrapper qualification-modal-slider">
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert1.png" alt="Сертификат 1" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert2.png" alt="Сертификат 2" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert3.png" alt="Сертификат 3" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert4.png" alt="Сертификат 4" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert5.png" alt="Сертификат 5" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert6.png" alt="Сертификат 6" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert7.png" alt="Сертификат 7" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert8.png" alt="Сертификат 8" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert9.png" alt="Сертификат 9" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert10.png" alt="Сертификат 10" class="slide__cert"></div></div>
+                  <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./img/cert/cert11.png" alt="Сертификат 11" class="slide__cert"></div></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="work">
+  <div class="work__container container">
+    <h2 class="work__title work__title--main">Зачем бизнесу психоаналитик?</h2>
+    <div class="work__row">
+      <div class="work__content">
+        <p class="why__text">Когда привычные методы и системы управления бизнесом исчерпали себя,
+          руководитель сталкивается с кризисом, который, в свою очередь, является и новым путем развития.
+          Тотальная неопределенность, нелинейность и многомерность траекторий движения становятся нормой.
+          И лидеру важно быстро научиться взаимодействовать с этой реальностью. Развить и укрепить ценный навык
+          помогает психоаналитик бизнеса.
+        </p>
+      </div>
+      <div class="why__images">
+        <div class="why__image why__image--1"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="reviews__container container">
+    <h2 class="reviews__title reviews__title--main">Как проходят со мной сеансы?</h2>
+    <div class="reviews__row">
+      <!-- Slider main container -->
+      <div class="reviews-slider-content">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--1"></div></div>
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--2"></div></div>
+            <!--<div class="swiper-slide"><div class="slide__screenshot slide__screenshot--3"></div></div>-->
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--4"></div></div>
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--5"></div></div>
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--6"></div></div>
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--7"></div></div>
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--8"></div></div>
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--9"></div></div>
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--10"></div></div>
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--11"></div></div>
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--12"></div></div>
+            <!--<div class="swiper-slide"><div class="slide__screenshot slide__screenshot--13"></div></div>-->
+            <div class="swiper-slide"><div class="slide__screenshot slide__screenshot--14"></div></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="reviews__content">
+        <div class="reviews__bullet"></div>
+        <div class="reviews__title-wrapper">
+          <h2 class="reviews__title">Когда клиент приходит ко мне на сеанс, я:</h2>
+          <ol class="reviews__list">
+            <li class="reviews__list-item">&mdash; показываю что он в безопасности</li>
+            <li class="reviews__list-item">&mdash; что сейчас будет происходить обычный разговор</li>
+            <li class="reviews__list-item">&mdash; снижаю напряжение</li>
+          </ol>
+          <h2 class="reviews__title">
+            Это помогает человеку расслабиться, почувствовать себя более комфортно,
+            а психологу - расположить к себе клиента и выстроить с ним доверительные отношения.
+            <div class="reviews__bullet"></div>
+          </h2>
+          <button class="hero__button button" data-feedback-button>Получить консультацию</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="feedback-modal" data-feedback-modal>
+  <div class="feedback-modal-content">
+    <!-- Кнопка закрытия модального окна -->
+    <button class="close__feedback-modal" data-close-feedback-modal></button>
+    <h2 class="feedback-modal__title">Запись на консультацию</h2>
+    
+    <div class="edit1">Ваше имя:</div>
+    <div class="edit2">Номер телефона:</div>
+    <div class="edit3">Опишите Вашу ситуацию:</div>
+    
+    <button class="button">Отправить заявку</button>
+  </div>
+</div>
 
 <footer class="footer">
-  <div class="footer__wrapper">
-    <div class="footer-wrapper__logo-container">
-    <a href="" class="footer-logo__image-link">
-      <img
-              src="./img/logo.svg"
-              alt="Логотип Parresia"
-              class="footer-logo__image"
-              width="122" height="120" loading="lazy">
-    </a>
-    </div>
-    <div class="footer__inner">
-      <div class="footer__inner-top">
-        <nav class="footer__menu">
-          <ul class="footer__menu-list">
-            <li class="footer__menu-item">
-              <a href="" class="footer__menu-link">Услуги</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="" class="footer__menu-link">Обо мне</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="" class="footer__menu-link">Отзывы</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="" class="footer__menu-link">Контакты</a>
-            </li>
+  <div class="footer__container container">
+    <div class="footer__top">
+      <a href="#!" class="footer__logo"></a>
+      <div class="footer__row">
+        <nav class="footer__nav">
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item"><a href="#!" class="footer__nav-link">Услуги</a></li>
+            <li class="footer__nav-item"><a href="#!" class="footer__nav-link">Обо мне</a></li>
+            <li class="footer__nav-item"><a href="#!" class="footer__nav-link">Отзывы</a></li>
+            <li class="footer__nav-item"><a href="#!" class="footer__nav-link">Контакты</a></li>
           </ul>
         </nav>
-        <a href="" class="footer__policy-link">Политика конфиденциальности</a>
+        <a href="#!" class="footer__policy">Политика конфиденциальности</a>
       </div>
-      <div class="footer__inner-bottom">
-        <div class="footer__copyright">Developed by the team Desandid:	8 (918) 67-44-718</div>
-      </div>
+    </div>
+    <div class="footer__bottom">
+      Developed by the team Desandid:	8 (918) 67-44-718
     </div>
   </div>
 </footer>
+<!-- scripts -->
+<script src="./js/main.js"></script>
+<script src="./js/slider.js"></script>
 </body>
 </html>

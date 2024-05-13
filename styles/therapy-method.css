@@ -1,0 +1,156 @@
+.therapy-method-full-bg {
+    background: url("../img/translucent-bg.png") center/cover no-repeat;
+}
+.therapy-method {
+    /* делаем внутренний отступ в нашем блоке сверху и снизу в 50px */
+    padding: 50px var(--container-padding-x);
+}
+/* .work__container
+    задаем общей обертке для всех work__row флекс,чтобы сделать
+    флекс сетку, затем даем направление флекс элементам направление
+    колонка */
+.therapy-method__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+
+.therapy-method__title {
+    /* каждому заголовку задаем внешний отступ снизу в 30px*/
+    margin-bottom: 30px;
+    color: #000;
+    font-weight: 600;
+    /* используем функцию clamp для расчета размера шрифта без медиазапросов
+     clamp(min, current, max) минимальное значение, текущее(его нужно задавать в адаптивных единицах), максимальное значение*/
+    font-size: clamp(16px, 8vw, 36px);
+    text-align: center;
+}
+.therapy-method__title--main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(16px, 8vw, 48px);
+    text-wrap: balance;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.therapy-method__title--main::before{
+    content: '';
+    background-image: url('../img/work/bookmark.svg');
+    background-position: center center; /* x y */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* позиционируем этот элемент относительно родительского блока
+         это у нас work__title--main */
+    position: absolute;
+    left: 0;
+    width: 120px;
+    height: 35px;
+}
+@media only screen and (max-width: 1280px) {
+    .therapy-method__title--main::before{
+        content: '';
+        width: 100px;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .therapy-method__title--main::before{
+        display: none;
+    }
+}
+/* общая обертка для картинок и контента*/
+.therapy-method__row {
+    display: flex;
+    row-gap: 20px;
+    min-height: 400px;
+    justify-content: space-between;
+    column-gap: 20px;
+    position: relative;
+}
+/* на ширине 1024px перестраиваем элементы в нашей обертке в колонку */
+@media only screen and (max-width: 1024px) {
+    .therapy-method__row {
+        flex-direction: column;
+    }
+}
+/* при помощи псевдоэлемента добавляем линию между нашими обертками
+ для того чтобы визуально было легче разделить блоки с контентом
+.therapy-method__row::before{
+    content: '';
+    height: 3px;
+    background-color: #979797;
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+}
+Правда в этом блоке выглядит, кмк, неуместно*/
+
+.therapy-method__content {
+    max-width: 33%;
+}
+.therapy-method__qualification{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 33%;
+    align-items: center;
+    .therapy-method__content {
+        max-width: 100%;
+    }
+}
+/* на ширине 1024 растягиваем его на всю доступную ширину*/
+@media only screen and (max-width: 1024px) {
+    .therapy-method__content {
+        max-width: 100%;
+    }
+    .therapy-method__qualification {
+        max-width: 100%;
+    }
+}
+
+.therapy-method__text {
+    color: #000;
+    font-weight: 400;
+    font-size: clamp(14px, 5vw, 24px);
+}
+/* задаем первому элементу внешний отступ в 30px */
+.therapy-method__text:nth-of-type(1){
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .therapy-method__text {
+        margin-bottom: 30px;
+    }
+}
+
+.therapy-method__images {
+    display: flex;
+    width: 33%;
+    min-height: 676px;
+}
+.therapy-method__image{
+    background-position: center center; /* x y */
+    /* масштабируем картинку, чтобы она полностью сохраняла свои пропорции,
+     некоторые части изображения будут не видны, потому пропорции картинки не будут совпадать с пропорциями блока
+     если бы мы использовали contain, то все изображение было бы видно, но в блоке появилось бы пустое пространство
+     такой вариант тоже неплохой, можно сделать и так, смотря что от нас требуется, ну думаю тут не важно, эти картинки всего лишь
+     декоративные элементы*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* картинка растягивается на всю доступную ширину родительского блока*/
+    width: 100%;
+    /* скругляем края*/
+    border-radius: var(--img-border-radius);
+}
+@media only screen and (max-width: 1024px) {
+    .therapy-method__images {
+        width: 100%;
+        min-height: 500px;
+    }
+}
+.therapy-method__image--1 {
+    background-image: url('../img/therapy-method/therapy-hero.jpg');
+}
