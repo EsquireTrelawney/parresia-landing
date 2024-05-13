@@ -343,19 +343,19 @@
   </div>
 </section>
 
-<div class="feedback-modal" data-feedback-modal>
-  <div class="feedback-modal-content">
-    <!-- Кнопка закрытия модального окна -->
-    <button class="close__feedback-modal" data-close-feedback-modal></button>
-    <h2 class="feedback-modal__title">Запись на консультацию</h2>
-    
-    <div class="edit1">Ваше имя:</div>
-    <div class="edit2">Номер телефона:</div>
-    <div class="edit3">Опишите Вашу ситуацию:</div>
-    
-    <button class="button">Отправить заявку</button>
-  </div>
-</div>
+<dialog class="modal">
+  <button class="modal-close"></button>
+  <h2 class="modal-title">Запись на консультацию</h2>
+  <form class="modal-form" action="">
+    <label for="name"></label>
+    <input type="text" name="name" id="name" placeholder="Ваше имя:">
+    <label for="phone-number"></label>
+    <input type="tel" name="phoneNumber" id="phone-number" placeholder="Номер телефона">
+    <label for="description"></label>
+    <textarea name="description" id="description" placeholder="Описание:"></textarea>
+    <button class="button" id="modal-button" type="submit" data-button-submit>Отправить заявку</button>
+  </form>
+</dialog>
 
 <footer class="footer">
   <div class="footer__container container">

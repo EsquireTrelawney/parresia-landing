@@ -8,6 +8,9 @@ const closeQualificationModal = document.querySelector("[data-close-qualificatio
 const modalFeedback = document.querySelector("[data-feedback-modal]")
 const feedbackButtons = document.querySelectorAll("[data-feedback-button]")
 const closeFeedbackModal = document.querySelector("[data-close-feedback-modal]")
+const heroButton = document.querySelector(".hero__button");
+const closeModalWindowBtn = document.querySelector(".modal-close")
+const modalWindow = document.querySelector(".modal");
 burger.addEventListener("click", () =>{
     body.classList.toggle("stop-scroll")
     burger.classList.toggle("burger--active")
@@ -32,15 +35,21 @@ closeQualificationModal.addEventListener("click", () => {
     body.classList.toggle("modal--open-body")
 })
 
-feedbackButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        modalFeedback.classList.toggle("modal--open")
-        body.classList.toggle("modal--open-body")
-    })
+
+
+
+modalWindow.addEventListener("close", returnScroll)
+
+heroButton.addEventListener("click", () => {
+    modalWindow.showModal();
+    document.body.classList.add("scroll-lock")
 })
 
-closeFeedbackModal.addEventListener("click", () => {
-    modalFeedback.classList.toggle("modal--open")
-    body.classList.toggle("modal--open-body")
+closeModalWindowBtn.addEventListener("click", () => {
+    modalWindow.close();
 })
+
+function returnScroll() {
+    document.body.classList.remove("scroll-lock")
+}
 
