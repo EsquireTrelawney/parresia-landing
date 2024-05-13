@@ -1,0 +1,209 @@
+.contacts {
+    padding: 50px var(--container-padding-x);
+}
+.contacts__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.contacts__row {
+    display: flex;
+    row-gap: 20px;
+    min-height: 400px;
+    justify-content: space-between;
+    column-gap: calc(100vw/24);
+    position: relative;
+}
+
+@media only screen and (max-width: 1024px) {
+    .contacts__row {
+        flex-direction: column;
+    }
+}
+
+.contacts-map {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    row-gap: 50px;
+    column-gap: 20px;
+}
+
+.contacts-map .contacts__title {
+    text-align: center;
+    margin: 0;
+}
+
+.maps__wrapper {
+    min-height: 777px;
+}
+
+.maps__frame {
+    width: 100%;
+    height: 100%;
+}
+
+.maps__div {
+    width: 100%;
+    min-height: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .contacts-map {
+        width: 100%;
+        min-height: 777px;
+        row-gap: 40px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .contacts-map {
+        min-height: 600px;
+        row-gap:30px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .contacts-map {
+        row-gap: 20px;
+        min-height: 500px;
+    }
+}
+@media only screen and (max-width: 460px) {
+    .contacts-map {
+        row-gap: 10px;
+        min-height: 500px;
+    }
+}
+
+.contacts__content {
+    max-width: 50%;
+}
+@media only screen and (max-width: 1024px) {
+    .contacts__content {
+        max-width: 100%;
+    }
+}
+
+.contacts__title {
+    /* каждому заголовку задаем внешний отступ снизу в 30px*/
+    margin-bottom: 30px;
+    color: #000;
+    font-weight: 600;
+    /* используем функцию clamp для расчета размера шрифта без медиазапросов
+     clamp(min, current, max) минимальное значение, текущее(его нужно задавать в адаптивных единицах), максимальное значение*/
+    font-size: clamp(16px, 8vw, 36px);
+    text-align: left;
+}
+.contacts__title--main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(16px, 8vw, 48px);
+    text-wrap: balance;
+    position: relative;
+    margin-bottom: 0;
+}
+/* добавляем декорацию через псевдоэлемент ::before */
+.contacts__title--main::before{
+    content: '';
+    background-image: url('../img/work/bookmark.svg');
+    background-position: center center; /* x y */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* позиционируем этот элемент относительно родительского блока
+         это у нас work__title--main */
+    position: absolute;
+    left: 0;
+    width: 120px;
+    height: 35px;
+}
+@media only screen and (max-width: 1280px) {
+    .contacts__title--main::before{
+        content: '';
+        width: 100px;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .contacts__title--main::before{
+        display: none;
+    }
+}
+
+.contacts__text {
+    text-indent: 0;
+    color: #000;
+    font-weight: 400;
+    font-size: clamp(14px, 5vw, 28px);
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+    color: #000;
+    font-weight: 400;
+    font-size: clamp(14px, 5vw, 24px);
+}
+@media only screen and (max-width: 1024px) {
+    .contacts-list {
+        text-align: center;
+    }
+    .contacts__title {
+        text-align: center;
+    }
+}
+.contacts__interactive--contact {
+    position: relative;
+}
+.contacts__interactive--contact::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: var(--color-header-menu-accent);
+        z-index: -1;
+        width: 100%;
+        height: 1px;
+        transition: calc(var(--transition-duration) + .3s);
+    }
+
+.contacts__interactive--contact:hover::after {
+    height: 100%;
+}
+
+.social__links--centered {
+    justify-content: center; /* Центрирование по горизонтали */
+}
+
+.contacts-list__item .social__link {
+    width: 85px;
+    height: 85px;
+}
+
+.contacts-list__item .social__link--telegram {
+    background-image: url("../img/social/tg-social85x85.svg")
+}
+
+.contacts-list__item .social__link--whatsup {
+    background-image: url("../img/social/whatsapp-social85x85.svg");
+}
+
+.contacts-list__item .social__link--instagram /*ЗАПРЕЩЕННАЯ ОРГАНИЗАЦИЯ НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ!!11*/ {
+    background-image: url("../img/social/insta-social85x85.svg");
+}
+
+@media only screen and (max-width: 800px) {
+    .contacts-list__item .social__link {
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+    }
+}
+
+.contacts-list__item .contacts__title:last-child {
+    margin: 0;
+}
+

@@ -274,6 +274,7 @@
     background-image: url("../img/social/whatsapp-social.svg");
 }
 
+
 .nav__link::after {
     content: '';
     position: absolute;
